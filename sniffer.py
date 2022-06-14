@@ -3,10 +3,8 @@ import struct
 import textwrap
 
 '''
-Since AF_PACKET doesn't work on windows we have to resort to isolating each packet individually therefore
-the ethernet_frame is useless because it will keep sending the wrong info and it will never check for the
-right protocol, hence we have to make the ipv4 protocol the main one instead so we can trace packets as 
-they are.
+Since AF_PACKET is not compatible with windows we use workarounds like ioctl (& setsockopt->for an independant connection ** TCP) /
+Also the ethernet_frame is useless since the adapter doesnt wanna check for any other protocol other than 43200 no idea why. /
 '''
 
 ip = socket.gethostbyname(socket.gethostname())
