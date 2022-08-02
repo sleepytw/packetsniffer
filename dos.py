@@ -1,7 +1,7 @@
 import socket
 from os import urandom
 
-ip='78.90.90.10'
+ip='xx.xx.xx.xx'
 port=80
 
 sock=socket.socket(socket.AF_INET, socket.SOCK_DGRAM) #-- UDP
